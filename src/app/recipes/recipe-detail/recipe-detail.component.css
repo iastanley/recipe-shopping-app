@@ -1,0 +1,9 @@
+.recipe-detail-header {
+  margin-bottom: 20px;
+}
+
+.recipe-name {
+  font-weight: bold;
+  font-size: 2em;
+  color: #000;
+}
