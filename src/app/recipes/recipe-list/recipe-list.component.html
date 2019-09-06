@@ -6,17 +6,17 @@
 <hr>
 <div class="row">
   <div class="col-xs-12">
-    <!-- Temporary single item -->
-    <a *ngFor="let recipe of recipes" href="#" class="list-group-item clearfix">
-      <div class="pull-left">
-        <h4 class=list-group-item-heading>{{ recipe.name }}</h4>
-        <p class="listgroup-item-text">{{ recipe.description }}</p>
-      </div>
-      <span class="pull-right">
-        <img [src]="recipe.imagePath" alt="{{recipe.name}}-img" class="img-responsive" style="max-height: 50px">
-      </span>
-    </a>
-    <app-recipe-item></app-recipe-item>
+    <!-- <app-recipe-item 
+      [recipeList]="recipes"
+      ></app-recipe-item> -->
+    
+    <!-- You could also pass in a single recipe and use *ngFor='let recipe of recipes' -->
+    <!-- but this messes up styling -->
+    <app-recipe-item 
+      *ngFor="let recipeEl of recipes" 
+      [recipe]="recipeEl"
+      (click)="selectRecipe.emit(recipeEl)"
+      ></app-recipe-item>
   </div>
 </div>
 
