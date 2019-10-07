@@ -30,8 +30,8 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscriptions.forEach(sub => {
+    for(let sub of this.subscriptions) {
       sub.unsubscribe();
-    })
+    }
   }
 }
