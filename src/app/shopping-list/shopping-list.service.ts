@@ -18,6 +18,11 @@ export class ShoppingListService {
     this.ingredientsUpdated.emit(this.ingredients);
   }
 
+  addIngredients(ingredients: Ingredient[]) {
+    this.ingredientList.push(...ingredients); // PUSHING WITH SPREAD OPERATOR!
+    this.ingredientsUpdated.emit(this.ingredients);
+  }
+
   clearIngredients() {
     this.ingredientList = [];
     this.ingredientsUpdated.emit(this.ingredients);
