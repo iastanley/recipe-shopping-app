@@ -6,16 +6,9 @@
 <hr>
 <div class="row">
   <div class="col-xs-12">
-    <!-- <app-recipe-item 
-      [recipeList]="recipes"
-      ></app-recipe-item> -->
-    
-    <!-- You could also pass in a single recipe and use *ngFor='let recipe of recipes' -->
-    <!-- but this messes up styling -->
     <app-recipe-item 
       *ngFor="let recipeEl of recipes" 
       [recipe]="recipeEl"
-      (click)="selectRecipe.emit(recipeEl)"
       ></app-recipe-item>
   </div>
 </div>
