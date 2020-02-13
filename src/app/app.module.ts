@@ -11,6 +11,7 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingListEditComponent } from './shopping-list/shopping-list-edit/shopping-list-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { LogInputDirective } from './shared/log-input.directive';
 
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipesService } from './recipes/recipes.service';
@@ -25,7 +26,8 @@ import { RecipesService } from './recipes/recipes.service';
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingListEditComponent,
-    DropdownDirective
+    DropdownDirective,
+    LogInputDirective,
   ],
   imports: [
     BrowserModule,
