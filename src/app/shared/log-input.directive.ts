@@ -7,8 +7,8 @@ export class LogInputDirective {
 
   constructor() {}
 
-  @HostListener('change', ['$event']) logOnChange(event: Event) {
-    console.log((event.target as HTMLInputElement).value);
+  @HostListener('change', ['$event.target']) logOnChange(eventTarget) {
+    console.log(eventTarget.value);
   }
 
 }
