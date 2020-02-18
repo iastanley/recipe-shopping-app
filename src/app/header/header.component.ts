@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { PageName } from '../shared/page-name.model';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +7,4 @@ import { PageName } from '../shared/page-name.model';
 })
 export class HeaderComponent {
   collapsed = true; // hide collapsable menu by default on mobile
-  @Input() selectedPage: PageName;
-  @Output() pageChange = new EventEmitter<string>();
-
-  onSelectPage(pageName: PageName) {
-    this.pageChange.emit(pageName);
-  }
 }

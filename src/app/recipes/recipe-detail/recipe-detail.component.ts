@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Recipe } from '../recipe.model';
+import { RecipesService } from '../recipes.service';
 import { ShoppingListService } from '../../shopping-list/shopping-list.service';
 
 @Component({
@@ -8,13 +10,18 @@ import { ShoppingListService } from '../../shopping-list/shopping-list.service';
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit {
-  @Input() recipe: Recipe;
+  public recipe: Recipe;
 
   constructor(
+    private route: ActivatedRoute,
+    private recipesService: RecipesService,
     private shoppingListService: ShoppingListService
   ) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe((paramMap: ParamMap) =>  {
+      this.recipe = this.recipesService.getRecipeById(+paramMap.get('id'));
+    });
   }
 
   // add recipe ingredients to the existing shopping list

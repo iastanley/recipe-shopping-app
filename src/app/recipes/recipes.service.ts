@@ -29,5 +29,9 @@ export class RecipesService {
   public get recipes() {
     return [...this.recipesArray] // return a copy of the recipes array
   }
+
+  public getRecipeById(id: number): Recipe {
+    return {...this.recipesArray[id]} // return copy of recipe
+  }
   
 }
